@@ -1,0 +1,689 @@
+@import "~bootstrap/dist/css/bootstrap.min.css";
+@import url("https://fonts.googleapis.com/css2?family=Abel&family=Pacifico&display=swap");
+@import "~@fortawesome/fontawesome-free/css/all.css";
+
+@import "~ngx-toastr/toastr";
+
+
+:root {
+  --primary-color: orange;
+  --secundary-color: rgb(185, 149, 185);
+  --tertiary-color: crimson;
+  --quaternary-color: rgb(165, 0, 0);
+}
+
+* {
+  font-size: 16px;
+  text-transform: none;
+}
+
+body {
+  font-family: "Abel", sans-serif !important;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+.box {
+  border-radius: 7px;
+  margin-bottom: 10px;
+  padding: 10px;
+  margin-right: 10px;
+  word-break: keep-all;
+  word-wrap: break-word;
+  font-weight: 600;
+  background-color: rgb(233, 233, 233);
+}
+
+h1,
+h4,
+h3,
+h2 {
+  font-family: "Pacifico", cursive;
+  text-align: center;
+  padding-bottom: 0.3em;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.562);
+}
+
+@media (max-width: 767px) {
+  .tlmd {
+    display: none;
+  }
+
+  .inputtrans {
+    width: 100%;
+  }
+}
+
+@media (max-width: 360px) {
+  #form1 {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) {
+  .tlsm {
+    display: none;
+  }
+}
+
+@media (max-width: 1145px) {
+  .formbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+.light {
+  background-color: #f0f0f0;
+}
+
+.light h1 {
+  color: rgb(92, 92, 92);
+}
+
+.light h4 {
+  color: rgb(22, 151, 145);
+}
+
+.light a:link,
+.light label span,
+.light div .ngx-calendar__day-of-week {
+  color: #9da442;
+}
+
+.light h2,
+.light span.ngx-calendar__title,
+.light #date {
+  color: #f3bc74;
+}
+
+.light .box,
+.light .btns,
+.light .inputtrans {
+  background-color: #e4e4e4;
+  color: #313131;
+}
+
+.green {
+  background-color: #3e4437;
+}
+
+.green a:link,
+.green label span,
+.green div .ngx-calendar__day-of-week,
+.green #date,
+.green h4 {
+  color: #e29e6a;
+}
+
+.green h2,
+.green h1,
+.green span.ngx-calendar__title {
+  color: #c4c79f;
+}
+
+.green .box,
+.green .inputtrans,
+.green .btns,
+.green ::placeholder {
+  background-color: #6f7762;
+  /* background-color: #87917a; */
+  color: #e2d4b4;
+}
+
+.dark {
+  background-color: #242424;
+}
+
+.dark h1,
+.dark div .ngx-calendar__day-of-week,
+.dark a:link {
+  color: #c2a7bd;
+}
+
+.dark h4,
+.dark #tabSemana,
+.dark span.ngx-calendar__title {
+  color: #5c997c;
+}
+
+.dark h2,
+.dark label span,
+.dark #date {
+  color: #f3834e;
+}
+
+.dark .box,
+.dark .inputtrans,
+.dark .btns,
+.dark div .ngx-calendar__day-number,
+.dark ::placeholder {
+  background-color: #312f2e !important;
+  color: #d4be8a;
+}
+
+.bege {
+  background-color: #ecdfc8;
+}
+
+.bege h1,
+.bege span.ngx-calendar__title,
+.bege a:link {
+  color: #84524a;
+}
+
+.bege h4,
+.bege label span {
+  color: #ecb390;
+}
+
+.bege h2,
+.bege #date,
+.bege div .ngx-calendar__day-of-week {
+  color: #a7c99a;
+}
+
+.bege .box,
+.bege .inputtrans,
+.bege .btns,
+.bege div .ngx-calendar__day-number,
+.bege ::placeholder {
+  background-color: #fcf8e8;
+  color: #bdaa7e;
+}
+
+.pink {
+  background-color: #eba58d;
+}
+
+.pink h1 {
+  color: #f1e6ad;
+}
+
+.pink h4,
+.pink div .ngx-calendar__day-of-week {
+  color: #72b5a4;
+}
+
+.pink h2,
+.pink label span,
+.pink span.ngx-calendar__title {
+  color: #f3834e;
+}
+
+.pink #date,
+.pink a:link {
+  color: #dcedc1;
+}
+
+.pink .box,
+.pink .inputtrans,
+.pink .btns,
+.pink div .ngx-calendar__day-number,
+.pink ::placeholder {
+  background-color: #ffd3b6;
+  color: #575959;
+}
+
+.blue {
+  background-color: #acc4a0;
+}
+
+.blue #date {
+  color: #325055;
+}
+
+.blue label span,
+.blue span.ngx-calendar__title {
+  color: #acc4a0;
+}
+
+.blue h4,
+.blue div .ngx-calendar__day-of-week,
+.blue a:link {
+  color: #f4eeb4;
+}
+
+.blue h1,
+.blue h2 {
+  color: #ad2a35;
+}
+
+.blue .box,
+.blue .btns,
+.blue .inputtrans,
+.blue div .ngx-calendar__day-number,
+.blue ::placeholder {
+  background-color: #55897d;
+  color: #1e3033;
+}
+
+.retro {
+  background-color: #b48422;
+  color: #4a3d34;
+}
+
+.retro h1,
+.retro a:link,
+.retro div .ngx-calendar__day-of-week {
+  color: #e5dfaa;
+}
+
+.retro h4 {
+  color: #f74c42;
+}
+
+.retro h2,
+.retro label span,
+.retro span.ngx-calendar__title {
+  color: #03b093;
+}
+
+.retro .box,
+.retro .inputtrans,
+.retro .btns,
+.retro ::placeholder {
+  background-color: #4a3d34;
+  color: #92b373;
+}
+
+.cinnamon {
+  background-color: #322c24;
+}
+
+.cinnamon h1,
+.cinnamon span.ngx-calendar__title,
+.cinnamon a:link {
+  color: #6f7353;
+}
+
+.cinnamon h4 {
+  color: #c2bbb1;
+}
+
+.cinnamon h2,
+.cinnamon label span,
+.cinnamon #date,
+.cinnamon div .ngx-calendar__day-of-week {
+  color: #e5cdb4;
+}
+
+.cinnamon .box,
+.cinnamon .inputtrans,
+.cinnamon .btns,
+.cinnamon ::placeholder {
+  background-color: #b67d54;
+  color: #53463b;
+}
+
+.earth {
+  background-color: #29382e;
+}
+
+.earth h1,
+.earth span.ngx-calendar__title,
+.earth a:link {
+  color: #b48428;
+}
+
+.earth h4,
+.earth label span,
+.earth div .ngx-calendar__day-of-week {
+  color: #582708;
+}
+
+.earth h2,
+.earth #date {
+  color: #558867;
+}
+
+.earth .box,
+.earth .inputtrans,
+.earth .btns,
+.earth ::placeholder {
+  background-color: #9e6332;
+  color: #ddaf58;
+}
+
+
+.brown {
+  background-color: #221d0d;
+}
+
+.brown h1,
+.brown span.ngx-calendar__title,
+.brown a:link {
+  color: #b8866f;
+}
+
+.brown h4,
+.brown #date {
+  color: #f1de9f;
+}
+
+.brown h2,
+.brown label span,
+.brown div .ngx-calendar__day-of-week {
+  color: #cf6a3f;
+}
+
+.brown .box,
+.brown .inputtrans,
+.brown .btns,
+.brown ::placeholder {
+  background-color: #3b341c;
+  color: #cd996a;
+}
+
+.floral {
+  background-color: #7e7868;
+}
+
+.floral h1,
+.floral a:link {
+  color: #dbc3a7;
+}
+
+.floral h4,
+.floral div .ngx-calendar__day-of-week,
+.floral #date {
+  color: #e38d7e;
+}
+
+.floral h2,
+.floral label span,
+.floral span.ngx-calendar__title {
+  color: #909d8b;
+}
+
+.floral .box,
+.floral .inputtrans,
+.floral .btns,
+.floral ::placeholder {
+  background-color: #dbc3a7;
+  color: #7e7868;
+}
+
+.dark-blue {
+  background-color: #0f1a24;
+}
+
+.dark-blue h1,
+.dark-blue a:link {
+  color: #b9ca79;
+}
+
+.dark-blue h4,
+.dark-blue div .ngx-calendar__day-of-week,
+.dark-blue #date {
+  color: #ffffff;
+}
+
+.dark-blue h2,
+.dark-blue label span,
+.dark-blue span.ngx-calendar__title {
+  color: #9ac8e7;
+}
+
+.dark-blue .box,
+.dark-blue .inputtrans,
+.dark-blue .btns,
+.dark-blue ::placeholder {
+  background-color: #2a3b4e;
+  color: #acc4a0;
+}
+
+.purple {
+  background-color: #796a6d;
+}
+
+.purple h4 {
+  color: #9893ad;
+}
+
+.purple span.ngx-calendar__title,
+.purple #date {
+  color: #ebe2b4;
+}
+
+.purple h2,
+.purple label span,
+.purple div .ngx-calendar__day-of-week,
+.purple h1,
+.purple a:link {
+  color: #54a393;
+}
+
+.purple .box,
+.purple .inputtrans,
+.purple .btns,
+.purple ::placeholder {
+  background-color: #53525a;
+  color: #dbbfda;
+}
+
+
+ul,
+li {
+  margin: 0px;
+  padding: 0px;
+  list-style: none;
+  cursor: pointer;
+}
+
+.inputtrans {
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  font-weight: bold;
+}
+
+::placeholder {
+  background-color: rgba(255, 255, 255, 0.1) !important;
+  border-radius: 5px;
+}
+
+.bege ::placeholder,
+.light ::placeholder,
+.pink ::placeholder {
+  background-color: rgba(255, 255, 255, 0.4) !important;
+  border-radius: 5px;
+}
+
+.dark ::placeholder,
+.brown ::placeholder,
+.dark-blue ::placeholder,
+.retro ::placeholder {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  border-radius: 5px;
+}
+
+i {
+  font-size: small;
+  margin-right: 0.5em;
+}
+
+.btns i {
+  font-size: small;
+  margin-right: 0;
+}
+
+.task i {
+  color: var(--primary-color);
+}
+
+.event i {
+  color: var(--secundary-color);
+}
+
+.appointment i {
+  color: var(--secundary-color);
+}
+
+.note i {
+  color: var(--tertiary-color);
+}
+
+.tv i {
+  color: var(--tertiary-color);
+}
+
+.finished {
+  text-decoration: line-through;
+  font-style: italic;
+  opacity: 60%;
+}
+
+.canceled {
+  text-decoration: line-through;
+  text-decoration-color: var(--tertiary-color);
+  text-decoration-style: solid;
+  text-decoration-thickness: 0.1em;
+  color: var(--tertiary-color);
+
+  opacity: 50%;
+}
+
+.started {
+  font-style: italic;
+  color: rgb(54, 168, 54);
+}
+
+.important {
+  color: var(--tertiary-color);
+}
+
+#obs svg {
+  stroke: var(--tertiary-color);
+  stroke-width: 1.7px;
+}
+
+/* Estilizando Temas especificos */
+
+.blue .started,
+.cinnamon .started {
+  color: rgb(129, 235, 129);
+}
+
+.earth .started,
+.green .started {
+  color: rgb(78, 207, 78);
+}
+
+.blue .important,
+.cinnamon .important,
+.earth .important,
+.green .important {
+  color: var(--quaternary-color);
+}
+
+.blue .tv i,
+.cinnamon .tv i,
+.earth .tv i,
+.green .tv i {
+  color: var(--quaternary-color);
+}
+
+.blue .note i,
+.cinnamon .note i,
+.earth .note i,
+.green .note i {
+  color: var(--quaternary-color);
+}
+
+.blue #obs svg,
+.cinnamon #obs svg,
+.earth #obs svg,
+.green #obs svg {
+  stroke: var(--quaternary-color);
+  stroke-width: 1.7px;
+}
+
+/* fim */
+
+.modal-header {
+  background-color: #e4e4e4;
+  color: var(--tertiary-color);
+  font-family: "Pacifico", cursive;
+}
+
+.modal-header p {
+  font-size: 1.6em;
+}
+
+.modal-body {
+  background-color: #f0f0f0;
+  color: rgb(226, 185, 109);
+  font-weight: bold;
+}
+
+/* CALENDAR CONFIG */
+
+div.ngx-calendar__days-holder {
+  justify-content: space-between;
+}
+
+span.ngx-calendar__title {
+  font-family: "Pacifico";
+  color: var(--tertiary-color);
+  font-size: 1.2em !important;
+  /* min-width: fit-content; */
+  text-shadow: 1px 1px 1px black;
+}
+
+div .not-current span {
+  opacity: 0.4;
+}
+
+div .ngx-calendar__day--overlay {
+  background-color: transparent !important;
+}
+
+div.ngx-calendar__top-bar {
+  margin-bottom: 0 !important;
+}
+
+div.ngx-calendar__top-bar-icon {
+  color: var(--tertiary-color) !important;
+  background-color: transparent !important;
+  margin: 0 0.5em !important;
+}
+
+div .ngx-calendar__day-of-week {
+  text-align: center;
+  white-space: nowrap;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  text-shadow: 1px 1px 1px black;
+  font-size: 0.9em !important;
+}
+
+@media (min-width: 992px) and (max-width: 1146px) {
+  span.ngx-calendar__title {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+  }
+}
+
+@media (max-width: 991px) {
+  span.ngx-calendar__title {
+    min-width: fit-content;
+  }
+}
+
+@media (min-width: 1147px) {
+  span.ngx-calendar__title {
+    min-width: fit-content;
+  }
+}
+
+/* FIM CONFIG CALENDAR */
+
+.floral .acoes,
+.light .acoes,
+.pink .acoes {
+  background-color: rgba(0, 0, 0, 0.05) !important; 
+}
