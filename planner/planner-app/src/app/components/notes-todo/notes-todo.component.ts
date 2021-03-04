@@ -1,6 +1,6 @@
-import { ItemsService } from '../../services/items.service';
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
+import { ItemsService } from '../../services/items.service';
 
 @Component({
   selector: 'app-notes-todo',
@@ -11,15 +11,18 @@ export class NotesTodoComponent implements OnInit {
   @Input() list: any;
   @Input() where: any;
   items: any;
+  currentId!: any;
 
-  constructor(public itemsService: ItemsService) {}
+
+  constructor(public itemService: ItemsService) {}
 
   async ngOnInit(): Promise<void> {
-    this.items = await this.itemsService.renderItems(this.where);
-    if (!this.itemsService.keys.includes(this.where)) {
-      this.items = this.itemsService.idOrder(this.items);
-      this.itemsService.keys.push(this.where);
-      this.itemsService.items.push({ day: this.where, itemsDay: this.items });
+    this.currentId = this.itemService.currentId;
+    this.items = await this.itemService.renderItems(this.where);
+    if (!this.itemService.keys.includes(this.where)) {
+      this.items = this.itemService.idOrder(this.items);
+      this.itemService.keys.push(this.where);
+      this.itemService.items.push({ day: this.where, itemsDay: this.items });
     }
   }
 }

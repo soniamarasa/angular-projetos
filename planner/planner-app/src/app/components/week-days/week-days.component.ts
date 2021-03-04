@@ -1,7 +1,7 @@
-import { ItemsService } from '../../services/items.service';
 import { Input } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { DatesService } from '../../services/dates.service';
+import { ItemsService } from '../../services/items.service';
 
 @Component({
   selector: 'app-week-days',
@@ -11,7 +11,7 @@ import { DatesService } from '../../services/dates.service';
 export class WeekDaysComponent implements OnInit {
   weekDay: any;
 
-  @Input() day: any; // Esse input siginifca que o valor dessa variavel vai estar vindo do componente pai (output é do filho pro papi)
+  @Input() day: any; // O valor dessa variavel vem do componente pai (output é do filho pro pai)
   @Input() where: any;
   items: any;
   currentId!: any;
