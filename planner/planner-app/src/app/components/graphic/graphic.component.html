@@ -1,1 +1,5 @@
-<p>graphic works!</p>
+<div>
+    <canvas baseChart chartType="pie" [data]="itemService.valuesType" [labels]="itemService.types"
+        [colors]="chartColors" [legend]="true">
+    </canvas>
+</div>

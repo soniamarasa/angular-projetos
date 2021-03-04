@@ -1,0 +1,42 @@
+.acoes {
+  text-align: center;
+  background-color: rgba(0, 0, 0, 0.15);
+  border-radius: 0.3em;
+  cursor: pointer;
+  padding: 0.4em;
+  display: flex;
+  justify-content: space-between;
+}
+
+.acoes i {
+  text-decoration: none !important;
+  text-decoration-color: transparent !important;
+}
+
+#complete {
+  color: rgb(53, 197, 53);
+}
+
+#started {
+  color: var(--primary-color);
+}
+
+#edit {
+  color: var(--secundary-color);
+}
+
+#important {
+  color: var(--tertiary-color);
+}
+
+#canceled {
+  color: red;
+}
+
+#delete {
+  color: black;
+}
+
+.floral .acoes {
+  background-color: rgba(0, 0, 0, 0.774) !important;
+}

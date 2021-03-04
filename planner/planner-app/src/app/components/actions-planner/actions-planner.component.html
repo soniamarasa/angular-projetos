@@ -1,1 +1,32 @@
-<p>actions-planner works!</p>
+<div id="actions">
+    <form id="form1">
+        <div class="row">
+            <div class="col-12 col-sm-12 col-md-12 col-lg-12 select">
+                <select aria-placeholder="AQUI" class="selTheme inputtrans" [ngModel]="themeService.theme"
+                    [ngModelOptions]="{standalone: true}" (ngModelChange)="changeTheme($event)">
+                    <option disabled selected>Tema</option>
+                    <option value="bege">Bege</option>
+                    <option value="blue">Blue</option>
+                    <option value="brown">Brown</option>
+                    <option value="cinnamon">Cinnamon</option>
+                    <option value="dark">Dark</option>
+                    <option value="dark-blue">Dark Blue</option>
+                    <option value="earth">Earth</option>
+                    <option value="floral">Floral</option>
+                    <option value="green">Green</option>
+                    <option value="light">Light</option>
+                    <option value="pink">Pink</option>
+                    <option value="purple">Purple</option>
+                    <option value="retro">Retro</option>
+                </select>
+
+                <div id="buttons">
+                    <button type="button" title="Resetar Semana?" class=" btn btns btnreset btn-sm " (click)="reset()">
+                        <i class="fas fa-trash-restore-alt"></i> </button>
+                    <button type="button" title="Estatísticas" class="btn btns btn-sm " (click)="statistics()"> <i
+                            class="fas fa-chart-pie"></i> </button>
+                </div>
+            </div>
+        </div>
+    </form>
+</div>

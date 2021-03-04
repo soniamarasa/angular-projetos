@@ -1,1 +1,46 @@
-<p>week-days works!</p>
+<div>
+    <h4>{{ day }}</h4>
+    <img *ngIf="today == weekDay" alt="pin" src="../../../assets/img/pin.png" />
+</div>
+<div>
+    <ul class="listagem">
+        <ng-container *ngFor="let itemObj of itemService.items">
+            <!-- preciso criar ng-container ngFor para englobar o ng-container que usa o ngIf-->
+            <ng-container *ngIf="itemObj.day === where">
+                <li class='test' *ngFor="let item of itemObj.itemsDay" [ngClass]="{
+                'task' : item.type === 'task',
+                'event' : item.type === 'event',
+                'appointment' : item.type === 'appointment',
+                'note' : item.type === 'note',
+                'tv' : item.type === 'tv',
+                'finished': item.finished,
+                'started': item.started,
+                'important': item.important,
+                'canceled': item.canceled
+              }" (click)="itemService.actionsControl(item._id, null, null, null)">
+                    <ng-container *ngIf="item.type === 'task'"><i class="fas fa-square"></i></ng-container>
+                    <ng-container *ngIf="item.type === 'event'"><i class="fas fa-circle"></i></ng-container>
+                    <ng-container *ngIf="item.type === 'appointment'"><i class="fas fa-calendar"></i></ng-container>
+                    <ng-container *ngIf="item.type === 'note'"><i class="fas fa-pen"></i></ng-container>
+                    <ng-container *ngIf="item.type === 'tv'"><i class="fas fa-film"></i></ng-container>
+                    {{ item.description }} <span *ngIf="item.important">!</span>
+
+                    <p id="obs" *ngIf="item.obs !== ''">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
+                            class="bi bi-arrow-return-right" viewBox="0 0 16 16">
+                            <path fill-rule="evenodd"
+                                d="M1.5 1.5A.5.5 0 0 0 1 2v4.8a2.5 2.5 0 0 0 2.5 2.5h9.793l-3.347 3.346a.5.5 0 0 0 .708.708l4.2-4.2a.5.5 0 0 0 0-.708l-4-4a.5.5 0 0 0-.708.708L13.293 8.3H3.5A1.5 1.5 0 0 1 2 6.8V2a.5.5 0 0 0-.5-.5z" />
+                        </svg> {{ item.obs }}
+                    </p>
+
+                    <app-actions-item [id]="item._id" [type]="item.type" [description]="item.description"
+                        [obs]="item.obs" [where]="where" [finished]="item.finished" [started]="item.started"
+                        [important]="item.important" [canceled]="item.canceled"
+                        *ngIf="item._id === itemService.currentId">
+                    </app-actions-item>
+
+                </li>
+            </ng-container>
+        </ng-container>
+    </ul>
+</div>

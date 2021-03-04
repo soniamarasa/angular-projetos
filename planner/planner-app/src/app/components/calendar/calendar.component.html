@@ -1,1 +1,13 @@
-<p>calendar works!</p>
+<div class="container">
+    <ngx-simple-calendar [options]="options1" [events]="events">
+        <ng-template #day let-date="number" let-events="events" let-active="today" let-weekend="weekend">
+            <div class="round-date" [class.active]="active">
+                <span>{{ date }}</span>
+                <div class="events">
+                    <div class="event" *ngFor="let event of events"
+                        [title]="event.data.name + ' - ' + event.data.description"></div>
+                </div>
+            </div>
+        </ng-template>
+    </ngx-simple-calendar>
+</div>

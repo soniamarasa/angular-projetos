@@ -1,1 +1,13 @@
-<p>actions-item works!</p>
+<div class="acoes">
+    <i class="fas fa-check-square" id="complete" title="Completa"
+        (click)="itemService.actionsControl(id,'finished', where, finished); $event.stopPropagation()"></i>
+    <i class="fas fa-play" id="started" title="Iniciada"
+        (click)="itemService.actionsControl(id,'started', where, started); $event.stopPropagation()"></i>
+    <i class="fas fa-edit" id="edit" title="Editar" (click)="modalEditItem(); $event.stopPropagation()"></i>
+    <i class="fas fa-exclamation" id="important" title="Importante"
+        (click)="itemService.actionsControl(id, 'important', where, important); $event.stopPropagation()"></i>
+    <i class="fas fa-window-close" title="Cancelada" id="canceled"
+        (click)="itemService.actionsControl(id, 'canceled', where, canceled); $event.stopPropagation()"></i>
+    <i class="fas fa-trash-alt" id="delete" title="Deletar"
+        (click)="itemService.actionsControl(id, 'delete', where, null); $event.stopPropagation()"></i>
+</div>

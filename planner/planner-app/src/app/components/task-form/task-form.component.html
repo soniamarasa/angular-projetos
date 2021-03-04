@@ -1,1 +1,67 @@
-<p>task-form works!</p>
+<form class="centerform" [formGroup]="form" (ngSubmit)="newItem()">
+    <div class="row formulario">
+        <div class="col-12 col-sm-12 col-md-12 col-lg-5  formbox ">
+            <label id="new"> <span>Novo(a): </span></label>
+            <select class="inputtrans" id="type" formControlName="type">
+                <option value="task">■ Tarefa</option>
+                <option value="event">● Evento</option>
+                <option value="appointment">▲ Compromisso</option>
+                <option value="note">⇒ Nota</option>
+                <option value="tv">🎬 TV/Filme</option>
+            </select>
+
+            <input type="text" class="inputtrans desc" placeholder="Descrição" id="inputItems"
+                formControlName="description" />
+        </div>
+
+        <div class="col col-sm col-md-6 col-lg-4  formbox">
+            <div class="form-check form-check-inline weekDays">
+                <input class="form-check-input" #checkbox type="checkbox" id="monday" value="mon" name="where"
+                    (change)="onCheckChange($event)" />
+                <label class="form-check-label" for="monday">S</label>
+
+                <input class="form-check-input" #checkbox type="checkbox" id="tuesday" value="tue" name="where"
+                    (change)="onCheckChange($event)" />
+                <label class="form-check-label" for="tuesday">T</label>
+
+                <input class="form-check-input" #checkbox type="checkbox" id="wednesday" value="wed" name="where"
+                    (change)="onCheckChange($event)" />
+                <label class="form-check-label" for="wednesday">Q</label>
+
+                <input class="form-check-input" #checkbox type="checkbox" id="thursday" value="thu" name="where"
+                    (change)="onCheckChange($event)" />
+                <label class="form-check-label" for="thursday">Q</label>
+
+                <input class="form-check-input" #checkbox type="checkbox" id="friday" value="fri" name="where"
+                    (change)="onCheckChange($event)" />
+                <label class="form-check-label" for="friday">S</label>
+
+                <input class="form-check-input" #checkbox type="checkbox" id="saturday" value="sat" name="where"
+                    (change)="onCheckChange($event)" />
+                <label class="form-check-label" for="saturday">S</label>
+
+                <input class="form-check-input" #checkbox type="checkbox" id="sunday" value="sun" name="where"
+                    (change)="onCheckChange($event)" />
+                <label class="form-check-label" for="sunday">D</label>
+            </div>
+        </div>
+
+        <div class="col col-sm col-md col-lg-3  formbox form3">
+            <div class="form-check form-check-inline" id="boxes">
+                <input class="form-check-input" #checkbox type="checkbox" id="td" value="todo" name="where"
+                    (change)="onCheckChange($event)" />
+                <label class="form-check-label" for="td">Tarefas</label>
+
+                <input class="form-check-input" #checkbox type="checkbox" id="note" value="notes" name="where"
+                    (change)="onCheckChange($event)" />
+                <label class="form-check-label" for="note">Notas</label>
+            </div>
+
+
+            <button type="submit" class="btn btn-success btn-sm" id="submit">
+                <i class="fas fa-plus add"></i>
+            </button>
+
+        </div>
+    </div>
+</form>

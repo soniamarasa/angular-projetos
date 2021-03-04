@@ -1,0 +1,10 @@
+#obs {
+    margin-top: -5px ;
+    margin-bottom: 0;
+    padding-left: 5px;
+}
+
+#obs svg { 
+    stroke: var(--tertiary-color);
+    stroke-width:1.7px;
+}

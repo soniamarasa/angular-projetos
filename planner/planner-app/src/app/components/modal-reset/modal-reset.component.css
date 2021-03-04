@@ -1,0 +1,19 @@
+.container-fluid {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: center;
+  color: crimson;
+}
+
+.container-fluid div {
+  margin-top: 0.8em;
+}
+
+div button:first-child {
+  margin-right: 2em;
+}
+
+div button {
+  font-size: 1em;
+}

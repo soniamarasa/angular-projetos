@@ -1,0 +1,68 @@
+#actions {
+  position: absolute;
+  top: 0.4em;
+  right: 0.4em;
+}
+
+#buttons {
+  display: flex;
+}
+
+#form1 select {
+  cursor: pointer;
+  max-width: fit-content;
+}
+
+.btns {
+  border: none;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.btns:hover {
+  color: var(--primary-color);
+}
+
+.btns:active {
+  color: var(--tertiary-color);
+}
+
+.btnreset {
+  margin-right: 0.5em;
+  margin-left: 0.5em;
+  /* margin-bottom: 0.5em; */
+}
+
+button {
+  border: none;
+  width: content;
+  padding: 0 8px;
+}
+
+i {
+  font-size: 0.8em;
+}
+
+@media (max-width: 767px) {
+  #actions {
+    width: 15%;
+  }
+
+  button {
+    margin-top: 0.4em;
+  }
+
+  .btnreset {
+    margin-left: 0;
+  }
+
+  #buttons {
+    justify-content: space-between;
+  }
+}
+
+.select {
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+}

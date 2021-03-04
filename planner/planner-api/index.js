@@ -1,10 +1,10 @@
 import express from 'express'; //framework para node.js
-import mongoose, { Mongoose } from 'mongoose';
+import mongoose from 'mongoose';
 import cors from 'cors'; //-> Cors dribla a politica da mesma origem --> permite responder requisições de outro dominio
 import dotenv from 'dotenv';
 import routes from './routes/routes.js';
 
-dotenv.config;
+dotenv.config();
 
 const app = express(); //-> iniciando o express na const app
 app.use(cors()); //-> configurando cors
@@ -14,7 +14,7 @@ const { DB_CONNECTION } = process.env;
 
 mongoose.connect(
   DB_CONNECTION,
-  { useNewUrlParser: true, useUnifiedTopology: true },
+  { useNewUrlParser: true, useUnifiedTopology: true, },
   (error) => {
     if (error) {
       console.error('Erro na conexão MongoDB' + error);

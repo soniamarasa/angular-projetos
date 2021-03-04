@@ -1,0 +1,93 @@
+input,
+select {
+  background-color: transparent;
+  color: rgb(66, 66, 66);
+  outline: none;
+  border-radius: 5px;
+  font-weight: bold;
+  border: none;
+}
+
+.formgroup {
+  display: flex;
+  justify-content: space-between;
+}
+
+#close {
+  font-family: Abel;
+  color: red;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+option {
+  text-align: center;
+}
+
+.princ {
+  margin: 0 auto;
+  width: 90%;
+}
+
+.inputText {
+  min-width: min-content;
+  width: 100%;
+}
+
+::placeholder {
+  background-color: transparent;
+}
+
+.formboxed {
+  border-radius: 5px;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 0.7em;
+  background-color: rgba(0, 0, 0, 0.041);
+}
+
+label {
+  margin: 0;
+  padding: 0;
+  width: fit-content;
+  padding-right: 0.5em;
+}
+
+select {
+  background-color: transparent;
+  text-align: center;
+  width: 100%;
+}
+
+.button {
+  display: flex;
+  justify-content: flex-end;
+  margin-right: 0;
+  padding-right: 0;
+}
+
+button {
+  font-family: Pacifico;
+  padding: 0.2rem 0.5rem;
+  font-size: 0.85rem;
+  line-height: 1.4;
+  border-radius: 0.2rem;
+  height: max-content;
+}
+
+.margin {
+  margin-left: 0.5em;
+  margin-right: 0.5em;
+}
+
+@media (max-width: 991px) {
+  .margin {
+    margin-right: 0;
+  }
+
+  .button {
+    display: flex;
+    justify-content: center;
+  }
+}

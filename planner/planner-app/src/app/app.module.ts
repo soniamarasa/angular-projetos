@@ -8,7 +8,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { ChartsModule, ThemeService } from 'ng2-charts';
 import { ToastrModule } from 'ngx-toastr';
 import { NgxSimpleCalendarModule } from 'ngx-simple-calendar';
-import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { ModalModule } from 'ngx-bootstrap/modal';
 
 import { AppComponent } from './app.component';
 import { BodyComponent } from './modules/body/body.component';
@@ -49,7 +49,7 @@ import { ItemsService } from './services/items.service';
   ],
   imports: [
     BrowserModule,
-    NgbModule,
+    ModalModule.forRoot(),
     NgxSimpleCalendarModule,
     HttpClientModule,
     FormsModule,
@@ -57,8 +57,8 @@ import { ItemsService } from './services/items.service';
     CommonModule,
     ChartsModule,
     BrowserAnimationsModule, // required animations module
-    ToastrModule.forRoot(),
-    NgbModule,
+    ToastrModule.forRoot()
+    
   ],
   providers: [DatesService, ThemeService, ItemsService],
   bootstrap: [AppComponent]

@@ -1,1 +1,72 @@
-<p>modal-edit works!</p>
+<div class="modal-header">
+    <p class="modal-title pull-left petro-sans-normal title-page">Editar {{tipo}}</p>
+    <button type="button" class="close pull-right" id="btn-close" aria-label="Close"
+        (click)="bsModalRef.hide(); itemService.currentId = null">
+        <span id="close" aria-hidden="true">&times;</span>
+    </button>
+</div>
+<div class="modal-body">
+    <div class="princ ">
+
+        <div class="container-fluid">
+            <form class="" [formGroup]="form" (ngSubmit)="editItem()">
+                <div class="row formgroup">
+
+                    <div class=" col-6  col-sm-6 col-md-6 col-lg-3 formboxed">
+                        <label> <span>Tipo</span></label>
+                        <select id="type" formControlName="type">
+                            <option value="task">■ Tarefa</option>
+                            <option value="event">● Evento</option>
+                            <option value="appointment">▲ Compromisso</option>
+                            <option value="note">⇒ Nota</option>
+                            <option value="tv">🎬 TV/Filme</option>
+                        </select>
+                    </div>
+
+                    <div class=" col col-sm col-md col-lg-3 formboxed margin">
+                        <label> <span>Box</span></label>
+                        <select id="where" formControlName="where">
+                            <option value="mon">Segunda</option>
+                            <option value="tue">Terça</option>
+                            <option value="wed">Quarta</option>
+                            <option value="thu">Quinta</option>
+                            <option value="fri">Sexta</option>
+                            <option value="sat">Sabado</option>
+                            <option value="sun">Domingo</option>
+                            <option value="todo">Tarefas</option>
+                            <option value="notes">Anotações</option>
+                        </select>
+                    </div>
+
+                    <div class="col-12 col-sm-12 col-md-12 col-lg formboxed">
+                        <label> <span>Descrição:</span></label>
+                        <input type="text" placeholder="Descrição" class="inputText" formControlName="description" />
+                    </div>
+
+                </div>
+
+
+                <div class="row formgroup">
+                    <div class=" formboxed col-12 col-sm-12 col-md-12 col-lg-10">
+                        <label> <span>Observação:</span></label>
+                        <input type="text" placeholder="Observação" formControlName="obs" class="inputText" />
+                    </div>
+
+                    <div class="col-12 col-sm-12 col-md col-lg button ">
+                        <button type="submit" class="btn btn-success btn-sm" id="submit">
+                            Salvar
+                        </button>
+                    </div>
+
+                    <div>
+
+                    </div>
+
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+</div>
