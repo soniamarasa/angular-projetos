@@ -8,6 +8,7 @@ import { ItemsService } from '../../services/items.service';
   styleUrls: ['./modal-graphic.component.css'],
 })
 export class ModalGraphicComponent implements OnInit {
+
   constructor(
     public bsModalRef: BsModalRef,
     public itemsService: ItemsService
@@ -15,12 +16,15 @@ export class ModalGraphicComponent implements OnInit {
 
   ngOnInit(): void {}
 
+
+
   cleanValues(): any {
-    this.itemsService.tasks = 0;
-    this.itemsService.events = 0;
-    this.itemsService.appointments = 0;
-    this.itemsService.notes = 0;
-    this.itemsService.tv = 0;
+    this.itemsService.totalTasks = 0;
+    this.itemsService.started = 0;
+    this.itemsService.important = 0;
+    this.itemsService.finished = 0;
+    this.itemsService.canceled = 0;
+    this.itemsService.notInitiated = 0;
     this.itemsService.total = 0;
   }
 }

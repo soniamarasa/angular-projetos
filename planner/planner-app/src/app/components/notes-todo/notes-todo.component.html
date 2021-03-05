@@ -1,7 +1,7 @@
 <h2>{{list}}</h2>
 <div>
     <ul class="listagem" [id]="where">
-        <ng-container *ngFor="let itemObj of itemsService.items">
+        <ng-container *ngFor="let itemObj of itemService.items">
             <!-- preciso criar ng-container ngFor para englobar o ng-container que usa o ngIf-->
             <ng-container *ngIf="itemObj.day === where">
                 <li *ngFor="let item of itemObj.itemsDay" [ngClass]="{
@@ -14,7 +14,7 @@
           'started': item.started,
           'important': item.important,
           'canceled': item.canceled
-        }" (click)="itemsService.actionsControl(item._id, null, null, null)">
+        }" (click)="itemService.actionsControl(item._id, null, null, null)">
                     <ng-container *ngIf="item.type === 'task'"><i class="fas fa-square"></i></ng-container>
                     <ng-container *ngIf="item.type === 'event'"><i class="fas fa-circle"></i></ng-container>
                     <ng-container *ngIf="item.type === 'appointment'"><i class="fas fa-calendar"></i></ng-container>
@@ -29,7 +29,7 @@
                     <app-actions-item [id]="item._id" [type]="item.type" [description]="item.description"
                         [obs]="item.obs" [where]="where" [finished]="item.finished" [started]="item.started"
                         [important]="item.important" [canceled]="item.canceled"
-                        *ngIf="item._id === itemsService.currentId"></app-actions-item>
+                        *ngIf="item._id === itemService.currentId"></app-actions-item>
                 </li>
             </ng-container>
         </ng-container>

@@ -9,15 +9,29 @@ import { ItemsService } from '../../services/items.service';
   styleUrls: ['./graphic.component.css'],
 })
 export class GraphicComponent implements OnInit {
+  constructor(public itemService: ItemsService) {}
+
+  pieChartOptions: ChartOptions = {
+    responsive: true,
+    legend: { position: 'top' },
+    tooltips: {
+      enabled: true,
+      mode: 'single',
+      callbacks: {
+        label: function (tooltipItems, data) {
+          return data.datasets[0].data[tooltipItems.index] + ' %';
+        },
+      },
+    },
+  };
+
   public chartColors: Array<any> = [
     {
       // all colors in order
-      backgroundColor: ['#fbf5c5', '#afdefa', '#e3d2f4', '#ffd1d0', '#bdf6e3'],
+      backgroundColor: ['#FFA500','#33CCCC', '#4AB915', '#5C5C5E', '#DC143C'],
       borderColor: ['black', 'black', 'black', 'black', 'black'],
     },
   ];
-
-  constructor(public itemService: ItemsService) {}
 
   ngOnInit() {}
 }

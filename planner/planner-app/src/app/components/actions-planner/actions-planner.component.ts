@@ -40,40 +40,48 @@ export class ActionsPlannerComponent implements OnInit {
     this.itemService.items.forEach((element: any) => {
       element.itemsDay.forEach((items: any) => {
         if (items.type === 'task') {
-          this.itemService.tasks += 1;
-        } else if (items.type === 'note') {
-          this.itemService.notes += 1;
-        } else if (items.type === 'event') {
-          this.itemService.events += 1;
-        } else if (items.type === 'appointment') {
-          this.itemService.appointments += 1;
-        } else if (items.type === 'tv') {
-          this.itemService.tv += 1;
-        }
+          this.itemService.totalTasks += 1;
+          if (items.started) {
+            this.itemService.started += 1;
+          } else if (items.finished) {
+            this.itemService.finished += 1;
+          } else if (items.canceled) {
+            this.itemService.canceled += 1;
+          } else if (items.important) {
+            this.itemService.important += 1;
+          } else if (
+            items.finished === false &&
+            items.finished === false &&
+            items.canceled === false
+          ) {
+            this.itemService.notInitiated += 1;
+          }
 
-        this.itemService.total += 1;
+          this.itemService.total += 1;
+        }
       });
     });
     const porcent = 100 / this.itemService.total;
-    this.itemService.tasks *= porcent;
-    this.itemService.events *= porcent;
-    this.itemService.appointments *= porcent;
-    this.itemService.notes *= porcent;
-    this.itemService.tv *= porcent;
+    this.itemService.started *= porcent;
+    this.itemService.finished *= porcent;
+    this.itemService.canceled *= porcent;
+    this.itemService.important *= porcent;
+    this.itemService.notInitiated *= porcent;
 
     this.itemService.types = [
-      'Tarefas',
-      'Eventos',
-      'Compromissos',
-      'Anotações',
-      'Tv/Filmes',
+      'Em aberto',
+      'Iniciadas',
+      'Conclúidas',
+      'Canceladas',
+      'Importantes',
     ];
+
     this.itemService.valuesType = [
-      this.itemService.tasks.toFixed(2),
-      this.itemService.events.toFixed(2),
-      this.itemService.appointments.toFixed(2),
-      this.itemService.notes.toFixed(2),
-      this.itemService.tv.toFixed(2),
+      this.itemService.notInitiated.toFixed(2),
+      this.itemService.started.toFixed(2),
+      this.itemService.finished.toFixed(2),
+      this.itemService.canceled.toFixed(2),
+      this.itemService.important.toFixed(2),
     ];
 
     this.modalRef = this.modalService.show(ModalGraphicComponent, {
