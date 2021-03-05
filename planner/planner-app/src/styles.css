@@ -4,7 +4,6 @@
 
 @import "~ngx-toastr/toastr";
 
-
 :root {
   --primary-color: orange;
   --secundary-color: rgb(185, 149, 185);
@@ -347,7 +346,6 @@ h2 {
   color: #ddaf58;
 }
 
-
 .brown {
   background-color: #221d0d;
 }
@@ -464,7 +462,6 @@ h2 {
   color: #dbbfda;
 }
 
-
 ul,
 li {
   margin: 0px;
@@ -531,19 +528,18 @@ i {
 }
 
 .finished {
-  text-decoration: line-through;
+  /* text-decoration: line-through; */
   font-style: italic;
-  opacity: 60%;
+  opacity: 40%;
 }
 
 .canceled {
-  text-decoration: line-through;
-  text-decoration-color: var(--tertiary-color);
-  text-decoration-style: solid;
+  /* text-decoration: line-through;  
   text-decoration-thickness: 0.1em;
+  text-decoration-style: solid; */
+  text-decoration-color: var(--tertiary-color);
   color: var(--tertiary-color);
-
-  opacity: 50%;
+  opacity: 30%;
 }
 
 .started {
@@ -563,19 +559,29 @@ i {
 /* Estilizando Temas especificos */
 
 .blue .started,
-.cinnamon .started {
-  color: rgb(129, 235, 129);
+.cinnamon .started,
+.blue .fa-check {
+  color: rgb(14, 85, 14);
 }
 
 .earth .started,
-.green .started {
-  color: rgb(78, 207, 78);
+.green .started,
+.earth .fa-check,
+.retro .fa-check,
+.purple .fa-check {
+  color: rgb(78, 207, 78)  !important;
 }
 
 .blue .important,
 .cinnamon .important,
 .earth .important,
 .green .important {
+  color: var(--quaternary-color) !important;
+}
+
+.earth .canceled,
+.cinnamon .canceled,
+.purple .canceled {
   color: var(--quaternary-color);
 }
 
@@ -685,5 +691,42 @@ div .ngx-calendar__day-of-week {
 .floral .acoes,
 .light .acoes,
 .pink .acoes {
-  background-color: rgba(0, 0, 0, 0.05) !important; 
+  background-color: rgba(0, 0, 0, 0.05) !important;
+}
+
+ul li app-actions-item .finished,
+ul li app-actions-item div i {
+  text-decoration: none !important;
+}
+
+i {
+  text-decoration: none !important;
+}
+
+.fa-times {
+  color: var(--tertiary-color) !important;
+}
+
+.earth .fa-times,
+.cinnamon .fa-times,
+.purple .fa-times {
+  color: var(--quaternary-color) !important;
+}
+
+.fa-exclamation-circle {
+  color: var(--quaternary-color) !important;
+}
+
+.purple .fa-exclamation-circle {
+  color: var(--tertiary-color) !important;
+}
+
+.fa-check {
+  margin-left: 2px !important;
+  color: green !important;
+  text-shadow: 1 1 1 black;
+}
+
+app-actions-item, .acoes {
+  opacity: 100% !important;
 }

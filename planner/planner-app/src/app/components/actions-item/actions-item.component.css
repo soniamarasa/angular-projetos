@@ -5,13 +5,10 @@
   cursor: pointer;
   padding: 0.4em;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  text-decoration: none !important;
 }
 
-.acoes i {
-  text-decoration: none !important;
-  text-decoration-color: transparent !important;
-}
 
 #complete {
   color: rgb(53, 197, 53);
@@ -19,6 +16,7 @@
 
 #started {
   color: var(--primary-color);
+
 }
 
 #edit {
@@ -35,6 +33,7 @@
 
 #delete {
   color: black;
+  margin-right: 0px;
 }
 
 .floral .acoes {

@@ -5,7 +5,6 @@
 <div>
     <ul class="listagem">
         <ng-container *ngFor="let itemObj of itemService.items">
-            <!-- preciso criar ng-container ngFor para englobar o ng-container que usa o ngIf-->
             <ng-container *ngIf="itemObj.day === where">
                 <li class='test' *ngFor="let item of itemObj.itemsDay" [ngClass]="{
                 'task' : item.type === 'task',
@@ -23,7 +22,9 @@
                     <ng-container *ngIf="item.type === 'appointment'"><i class="fas fa-calendar"></i></ng-container>
                     <ng-container *ngIf="item.type === 'note'"><i class="fas fa-pen"></i></ng-container>
                     <ng-container *ngIf="item.type === 'tv'"><i class="fas fa-film"></i></ng-container>
-                    {{ item.description }} <span *ngIf="item.important">!</span>
+
+                    {{ item.description }} <i *ngIf="item.important" class="fas fa-exclamation-circle"> </i> <i *ngIf="item.finished" class="fas fa-check"> </i>
+                    <i *ngIf="item.canceled" class="fas fa-times"> </i>
 
                     <p id="obs" *ngIf="item.obs !== ''">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"

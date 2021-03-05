@@ -26,6 +26,9 @@ export class WeekDaysComponent implements OnInit {
     this.today = this.day.toLowerCase();
     this.weekDay = this.datesService.wD;
 
+    console.log(this.today);
+    console.log(this.weekDay);
+
     this.currentId = this.itemService.currentId;
     this.items = await this.itemService.renderItems(this.where);
     this.items = this.itemService.idOrder(this.items);

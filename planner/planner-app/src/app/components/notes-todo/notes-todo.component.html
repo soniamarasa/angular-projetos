@@ -20,7 +20,10 @@
                     <ng-container *ngIf="item.type === 'appointment'"><i class="fas fa-calendar"></i></ng-container>
                     <ng-container *ngIf="item.type === 'note'"><i class="fas fa-pen"></i></ng-container>
                     <ng-container *ngIf="item.type === 'tv'"><i class="fas fa-film"></i></ng-container>
-                    {{ item.description }} <span *ngIf="item.important">!</span>
+
+                    {{ item.description }} <i *ngIf="item.important" class="fas fa-exclamation-circle"> </i> <i *ngIf="item.finished" class="fas fa-check"> </i>
+                    <i *ngIf="item.canceled" class="fas fa-times"> </i>
+
                     <p id="obs" *ngIf="item.obs !== ''"> <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
                             fill="currentColor" class="bi bi-arrow-return-right" viewBox="0 0 16 16">
                             <path fill-rule="evenodd"

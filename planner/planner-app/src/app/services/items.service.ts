@@ -11,18 +11,18 @@ export class ItemsService {
   items = [] as any;
   keys = [] as any;
   currentId = null;
+
+  started = 0;
+  finished = 0;
+  important = 0;
+  canceled = 0;
+  notInitiated = 0;
   total = 0;
 
   types: any;
   valuesType: any;
 
   totalTasks = 0;
-
-  started = 0;
-  finished = 0;
-  important = 0;
-  canceled= 0;
-  notInitiated = 0;
 
   constructor(private httpCl: HttpClient, private toastr: ToastrService) {}
 
