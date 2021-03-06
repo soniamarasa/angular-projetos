@@ -1,7 +1,7 @@
 #actions {
   position: absolute;
   top: 0.4em;
-  right: 0.4em;
+  right: 1.2em;
 }
 
 #buttons {
@@ -45,7 +45,7 @@ i {
 
 @media (max-width: 767px) {
   #actions {
-    width: 15%;
+    width: 10%;
   }
 
   button {
