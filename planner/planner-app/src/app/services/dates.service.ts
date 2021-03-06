@@ -2,9 +2,7 @@ import { Injectable } from '@angular/core';
 import { format } from 'date-fns';
 import { ptBR } from 'date-fns/locale';
 
-@Injectable({
-  providedIn: 'root',
-})
+@Injectable()
 export class DatesService {
   weekDay = format(new Date(), 'EEEE', { locale: ptBR });
   wD: any;
@@ -14,15 +12,9 @@ export class DatesService {
     const month = format(new Date(), 'LLLL', { locale: ptBR });
     const year = format(new Date(), 'yyyy', { locale: ptBR });
 
-    this.wD = this.weekDay;
+    this.wD = this.weekDay.split('-')[0];
     this.weekDay = this.weekDay.charAt(0).toUpperCase() + this.weekDay.slice(1);
 
-    if (this.weekDay !== 'Sábado' && this.weekDay !== 'Domingo') {
-      this.weekDay += '-feira';
-    }
-
-    return (
-      this.weekDay + ', ' + day + ' de ' + month + ' de ' + year
-    );
+    return this.weekDay + ', ' + day + ' de ' + month + ' de ' + year;
   }
 }

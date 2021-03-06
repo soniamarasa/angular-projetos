@@ -23,6 +23,7 @@ export class WeekDaysComponent implements OnInit {
   ) {}
 
   async ngOnInit(): Promise<void> {
+
     this.today = this.day.toLowerCase();
     this.weekDay = this.datesService.wD;
 

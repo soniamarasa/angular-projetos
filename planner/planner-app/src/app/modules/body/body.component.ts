@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { WeekDaysComponent } from './../../components/week-days/week-days.component';
 import { DatesService } from './../../services/dates.service';
 
@@ -12,7 +12,6 @@ export class BodyComponent implements OnInit {
 
   constructor(private datesService: DatesService) {
     this.weekDay = this.datesService.weekDay;
-    console.log(this.weekDay);
   }
 
   ngOnInit(): void {}
