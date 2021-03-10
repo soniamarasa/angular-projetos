@@ -50,9 +50,10 @@ export class ActionsPlannerComponent implements OnInit {
           } else if (items.important) {
             this.itemService.important += 1;
           } else if (
-            items.finished === false &&
-            items.finished === false &&
-            items.canceled === false
+            !items.started &&
+            !items.finished &&
+            !items.canceled &&
+            !items.important
           ) {
             this.itemService.notInitiated += 1;
           }
@@ -71,7 +72,7 @@ export class ActionsPlannerComponent implements OnInit {
     this.itemService.types = [
       'Em aberto',
       'Iniciadas',
-      'Conclúidas',
+      'Concluídas',
       'Canceladas',
       'Importantes',
     ];
